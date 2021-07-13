@@ -22,14 +22,19 @@
                         <li><label>Temporada: &nbsp; </label>{{$alojamiento->temporada}}</li>
                         <li><label>fecha desde: &nbsp; </label>{{$alojamiento->fecha_desde}}</li>
                         <li><label>fecha hasta: &nbsp; </label>{{$alojamiento->fecha_hasta}}</li>
+                        <li>
                         <a href="{{route('alojamientos.habitacions.index',$alojamiento->identificador)}}">Comprobar Disponibilida</a>
+                        </li>
+                        <!--li>
+                        <a href="{{route('alojamientos.fechas.create',$alojamiento->identificador)}}">Comprobar Fechas</a>
+                      </li--->
                       </ul>
                     </div>
                     <?php
                         $i++;
                     }
                     ?>
-                  <div>
+                  </div>
                 </div>
             </div>
         </div>

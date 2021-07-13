@@ -19,20 +19,17 @@
                       <li><label>fecha hasta: &nbsp; </label>{{$alojamiento->fecha_hasta}}</li>
                     </ul>
                   </div>
-                  <div>
 
-                    <h3>Habitacion &nbsp;{{$habitacion->numero}}</h3>
-                  </div>
-                  <?php if($cantidadOcupado==0){?>
+
                   <div>
                     <h3>Habitacion libre</h3>
-                    <form method="POST" action="{{route('alojamientos.habitacions.reservas.cliente',[$alojamiento->identificador,$habitacion->identificador])}}">
+                    <form method="POST" action="{{route('alojamientos.fechas.store',$alojamiento->identificador)}}">
                       @csrf
                       <div class="form-group row">
                           <label for="fecha_desde" class="col-md-4 col-form-label text-md-right">Fecha desde</label>
 
                           <div class="col-md-6">
-                              <input id="fecha_desde" type="date" min="{{$alojamiento->fecha_desde}}" max="{{$alojamiento->fecha_hasta}}" value="{{$fecha_desde}}" class="form-control" name="fecha_desde" readonly required>
+                              <input id="fecha_desde" type="date" min="{{$temporada->fechaInicio}}" max="{{$temporada->fechaFin}}" value="{{$temporada->fechaInicio}}" class="form-control" name="fecha_desde"  required>
                           </div>
                       </div>
 
@@ -40,42 +37,24 @@
                           <label for="fecha_hasta" class="col-md-4 col-form-label text-md-right">Fecha hasta</label>
 
                           <div class="col-md-6">
-                              <input id="fecha_hasta" type="date" min="{{$alojamiento->fecha_desde}}" max="{{$alojamiento->fecha_hasta}}" value="{{$fecha_hasta}}" class="form-control" name="fecha_hasta" readonly required>
+                              <input id="fecha_hasta" type="date" min="{{$temporada->fechaInicio}}" max="{{$temporada->fechaFin}}" value="{{$temporada->fechaInicio}}" class="form-control" name="fecha_hasta"  required>
 
 
                           </div>
                       </div>
 
-                      <h3>Vincular Cliente</h3>
-                      <div class="form-group row">
-                          <label for="NIF" class="col-md-4 col-form-label text-md-right">NIF</label>
-
-                          <div class="col-md-6">
-                              <input id="NIF" type="text"  class="form-control" name="NIF" required>
-                          </div>
-                      </div>
                       <div class="form-group row mb-0">
                           <div class="col-md-8 offset-md-4">
-                              <button type="submit" id="buscar" class="btn btn-primary">
-                                  Buscar
+                              <button type="submit" class="btn btn-primary">
+                                  Reservar
                               </button>
                           </div>
                       </div>
                     </form>
+
                   </div>
-
-                <?php }else{ ?>
-                  <ul>
-                  <?php
-                    foreach ($ocupadas as $fecha) {
-                      ?>
-                      <li>{{$fecha->fecha}}</li>
-                      <?php
-                    }
-                    ?>
-                  </ul>
-
-                <?php }?>
+                  <div style="padding-bottom: 20px">
+                  </div>
 
                 </div>
             </div>

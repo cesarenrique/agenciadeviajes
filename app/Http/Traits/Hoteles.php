@@ -58,7 +58,7 @@ trait Hoteles{
                   // You can set any number of default request options.
                 'timeout'  => 10.0,
             ]);
-            $request=$client->get( $url, [
+            $request=$client->request($method, $url, [
                         'query'=>$queryArray,
                         'headers'=> ['Authorization'=> 'Bearer '.$credenciales->accessToken,
 

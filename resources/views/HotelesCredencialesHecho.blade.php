@@ -42,7 +42,7 @@
         </div>
     </div>
 
-            <script>
+            <script type="application/javascript">
                 $( document ).ready(function() {
                   var url = '{{$url}}'+'oauth/token';
                   var clientID = {{$cliente}};

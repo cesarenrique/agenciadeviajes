@@ -36,3 +36,4 @@ Route::post('alojamientos/{alojamiento}/habitacions/{habitacion}/reservas/tarjet
 Route::post('alojamientos/{alojamiento}/habitacions/{habitacion}/reservas/reservar', 'AlojamientoHabitacionReservaController@reservar')->name('alojamientos.habitacions.reservas.reservar');
 Route::post('alojamientos/{alojamiento}/habitacions/{habitacion}/reservas/cliente', 'AlojamientoHabitacionReservaController@lookforCliente')->name('alojamientos.habitacions.reservas.cliente');
 Route::resource('alojamientos.habitacions.reservas', AlojamientoHabitacionReservaController::class,['only'=>['store']]);
+Route::resource('alojamientos.fechas', AlojamientoFechaController::class,['only'=>['create','store']]);

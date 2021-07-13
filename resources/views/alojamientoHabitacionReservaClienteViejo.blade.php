@@ -47,6 +47,7 @@
                       </div>
 
                       <h3>Vincular Reserva</h3>
+                      <input id="Cliente_id" type="number"  class="form-control" name="Cliente_id" value="{{$cliente->identificador}}" hidden readonly required>
                       <div class="form-group row">
                           <label for="NIF" class="col-md-4 col-form-label text-md-right">NIF</label>
 
@@ -67,7 +68,7 @@
                           <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
                           <div class="col-md-6">
-                              <input id="email" type="text"  class="form-control" name="email" value="{{$cliente->email}}" readonly required/>
+                              <input id="email" type="text"  class="form-control" name="email" value="{{$cliente->correo}}" readonly required/>
 
 
                           </div>
@@ -81,6 +82,7 @@
 
                           </div>
                       </div>
+                      <input id="Tarjeta_id" type="text"  class="form-control" name="Tarjeta_id" value="{{$tarjeta->identificador}}" hidden readonly required/>
                       <div class="form-group row">
                           <label for="tarjeta" class="col-md-4 col-form-label text-md-right">Tarjeta</label>
 
@@ -93,7 +95,7 @@
                       <div class="form-group row mb-0">
                           <div class="col-md-8 offset-md-4">
                               <button type="submit" id="buscar" class="btn btn-primary">
-                                  Buscar
+                                  Reservar
                               </button>
                           </div>
                       </div>
@@ -105,7 +107,7 @@
                   <?php
                     foreach ($ocupadas as $fecha) {
                       ?>
-                      <li>{{$fecha->abierto}}</li>
+                      <li>{{$fecha->fecha}}</li>
                       <?php
                     }
                     ?>

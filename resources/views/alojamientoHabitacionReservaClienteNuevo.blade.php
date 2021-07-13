@@ -51,14 +51,14 @@
                           <label for="NIF" class="col-md-4 col-form-label text-md-right">NIF</label>
 
                           <div class="col-md-6">
-                              <input id="NIF" type="text"  class="form-control" name="NIF"  readonly required>
+                              <input id="NIF" type="text"  class="form-control" name="NIF"   required>
                           </div>
                       </div>
 
                       <div class="form-group row">
                           <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
                           <div class="col-md-6">
-                              <input id="nombre" type="text"  class="form-control" name="nombre" readonly required/>
+                              <input id="nombre" type="text"  class="form-control" name="nombre"  required/>
                           </div>
                       </div>
 
@@ -67,7 +67,7 @@
                           <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
                           <div class="col-md-6">
-                              <input id="email" type="text"  class="form-control" name="email"  readonly required/>
+                              <input id="email" type="text"  class="form-control" name="email"   required/>
 
 
                           </div>
@@ -76,7 +76,7 @@
                           <label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono</label>
 
                           <div class="col-md-6">
-                              <input id="telefono" type="text"  class="form-control" name="telefono"  readonly required/>
+                              <input id="telefono" type="text"  class="form-control" name="telefono"   required/>
 
 
                           </div>
@@ -85,7 +85,7 @@
                           <label for="tarjeta" class="col-md-4 col-form-label text-md-right">Tarjeta</label>
 
                           <div class="col-md-6">
-                              <input id="tarjeta" type="text"  class="form-control" name="tarjeta"  readonly required/>
+                              <input id="tarjeta" type="text"  class="form-control" name="tarjeta"   required/>
 
 
                           </div>
@@ -93,7 +93,7 @@
                       <div class="form-group row mb-0">
                           <div class="col-md-8 offset-md-4">
                               <button type="submit" id="buscar" class="btn btn-primary">
-                                  Buscar
+                                  Reservar
                               </button>
                           </div>
                       </div>
@@ -105,7 +105,7 @@
                   <?php
                     foreach ($ocupadas as $fecha) {
                       ?>
-                      <li>{{$fecha->abierto}}</li>
+                      <li>{{$fecha->fecha}}</li>
                       <?php
                     }
                     ?>

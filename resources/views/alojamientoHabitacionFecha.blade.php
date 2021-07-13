@@ -62,8 +62,9 @@
                   <ul>
                   <?php
                     foreach ($ocupadas as $fecha) {
+
                       ?>
-                      <li>{{$fecha->abierto}}</li>
+                      <li>{{$fecha->fecha}}</li>
                       <?php
                     }
                     ?>
